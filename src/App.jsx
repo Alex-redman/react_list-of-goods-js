@@ -1,7 +1,6 @@
 import 'bulma/css/bulma.css';
 import './App.scss';
 import { useState } from 'react';
-
 export const goodsFromServer = [
   'Dumplings',
   'Carrot',
@@ -30,7 +29,6 @@ function getPreparedGoods(goods, sortField, isReversed) {
         return 0;
     }
   });
-
   if (isReversed) {
     preparedGoods.reverse();
   }
@@ -51,9 +49,7 @@ export const App = () => {
           onClick={() => setSortField(SORT_FIELD_ALPHABETICCALY)}
           type="button"
           className={`button is-info ${
-            sortField === SORT_FIELD_ALPHABETICCALY && !isReversed
-              ? ''
-              : 'is-light'
+            sortField === SORT_FIELD_ALPHABETICCALY ? '' : 'is-light'
           }`}
         >
           Sort alphabetically
@@ -62,7 +58,7 @@ export const App = () => {
           onClick={() => setSortField(SORT_FIELD_LENGTH)}
           type="button"
           className={`button is-success ${
-            sortField === SORT_FIELD_LENGTH && !isReversed ? '' : 'is-light'
+            sortField === SORT_FIELD_LENGTH ? '' : 'is-light'
           }`}
         >
           Sort by length
